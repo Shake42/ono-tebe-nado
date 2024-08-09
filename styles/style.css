@@ -10,6 +10,8 @@
 .logo {
   width: 135px;
   height: 105px;
+  margin-right: 192px;
+  margin-left: 5px;
 }
 
 .menu {
@@ -30,20 +32,19 @@
   color: #000;
   width: fit-content;
 }
+
 .menu-link {
   text-decoration: none;
   border-bottom: 1px solid #000;
 }
 
 .address {
-  margin-left: auto;
   font-weight: 400;
   font-size: 18px;
   line-height: 135%;
   letter-spacing: 0.01em;
   color: #000;
   font-style: normal;
-  margin-right: 59px;
 }
 
 .contacts {
@@ -56,23 +57,30 @@
 .no-circle {
   list-style-type: none;
 }
+.no-link {
+  text-decoration: none;
+}
 
-.visually-hidden {
+.card-common {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-common::before {
+  content: "";
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+  pointer-events: none;
 }
 
 .promo {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/cover.jpg");
-  background-size: cover;
-  background-position: -140px 0px;
+  background-image: url("../images/cover.jpg");
   padding: 165px 50px 50px;
 }
 
@@ -84,29 +92,29 @@
   font-weight: 700;
   font-size: 100px;
   line-height: 115%;
-  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 10px;
+  display: block;
+  z-index: 2;
+  position: relative;
 }
 
-.promo-title-first-part {
-  margin-right: 0.3em;
+.promo-title-text {
+  letter-spacing: 30px;
 }
 
-.promo-title-o {
-  margin-left: -55px;
+.text-spaced-out {
+  letter-spacing: 60px;
 }
 
 .second-text {
   text-align: center;
-  margin-right: 30px;
   margin-bottom: 6px;
 }
 
 .third-text {
   text-align: end;
-  margin-right: -30px;
 }
 
 .promo-text-wrapper {
@@ -124,6 +132,8 @@
   color: #fff;
   word-spacing: 20px;
   margin-left: 27px;
+  z-index: 2;
+  position: relative;
 }
 
 .button {
@@ -131,11 +141,14 @@
   width: 256px;
   height: 51px;
   background-color: transparent;
+  font-family: Raleway;
   font-weight: 500;
   font-size: 22px;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
+  z-index: 2;
+  position: relative;
 }
 
 .lots-title {
@@ -160,13 +173,18 @@
   margin-bottom: 29px;
 }
 
-.card-item {
-  padding: 51px 40px 48px 40px;
+.card-link {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 51px 40px 48px 40px;
+  text-decoration: none;
+  z-index: 2;
+  position: relative;
 }
 
-.card-link {
+.card-title {
   font-weight: 700;
   font-size: 22px;
   line-height: 120%;
@@ -181,28 +199,24 @@
   font-size: 20px;
   line-height: 120%;
   color: #fff;
-  margin-top: auto;
 }
 
-.card-item1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/card-lot-01.jpg");
+.card-anderson {
+  background-image: url("../images/card-lot-01.jpg");
   background-size: cover;
-  background-position: -103px 0px;
+  background-position: center;
 }
 
-.card-item2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/card-lot-02.jpg");
+.card-joyce {
+  background-image: url("../images/card-lot-02.jpg");
   background-size: cover;
-  background-position: -103px 0px;
+  background-position: center;
 }
 
-.card-item3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/card-lot-03.jpg");
+.card-kandinsky {
+  background-image: url("../images/card-lot-03.jpg");
   background-size: cover;
-  background-position: -103px 0px;
+  background-position: center;
 }
 
 .more-info {
@@ -238,6 +252,11 @@
   grid-row: 1/3;
 }
 
+.logo-white-img {
+  width: 148px;
+  height: 114px;
+}
+
 .about-title {
   align-self: end;
   font-weight: 700;
@@ -252,29 +271,19 @@
   color: #000;
 }
 
-.about-content-part1 {
+.about-content-wide {
   letter-spacing: 0.01em;
   margin-bottom: 24px;
 }
 
 .footer {
   margin-top: 180px;
-  padding-bottom: 88px;
+  margin-bottom: 88px;
   padding: 0 50px;
   display: flex;
   justify-content: space-between;
-  width: 1000px;
 }
 
-.address-footer {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 135%;
-  letter-spacing: 0.01em;
-  color: #000;
-  font-style: normal;
-  align-items: flex-start;
-}
 .menu-footer {
   display: flex;
   flex-direction: column;
@@ -290,4 +299,9 @@
   display: flex;
   justify-content: space-between;
   gap: 48;
+}
+
+.socials-image {
+  width: 48px;
+  height: 48px;
 }
